@@ -1,5 +1,8 @@
 name: Run API tests
 
+env:
+  FORCE_COLOR: "2"
+
 # Trigger which git action (push, pull_request)
 # in which branch(es) should start the jobs...
 on:
@@ -47,8 +50,4 @@ jobs:
       - run: nohup npm run backend &
         # run whatever is specified in package.json
         # for the script test
-      - run:
-          npm run test:api
-          # make sure to run with colored output
-        env:
-          FORCE_COLOR: 2
+      - run: npm run test:api
