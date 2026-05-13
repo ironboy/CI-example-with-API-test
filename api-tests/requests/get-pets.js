@@ -17,6 +17,7 @@ export function postResponse() {
   );
 
   pm.test('First pet has expected fields', () => {
+    // very important to check the fields!
     pm.expect(json[0]).to.have.property('id');
     pm.expect(json[0]).to.have.property('name');
     pm.expect(json[0]).to.have.property('species');
