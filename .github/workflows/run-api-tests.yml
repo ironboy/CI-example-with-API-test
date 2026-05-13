@@ -1,8 +1,5 @@
 name: Run API tests
 
-env:
-  FORCE_COLOR: "2"
-
 # Trigger which git action (push, pull_request)
 # in which branch(es) should start the jobs...
 on:
@@ -51,3 +48,8 @@ jobs:
         # run whatever is specified in package.json
         # for the script test
       - run: npm run test:api
+        # not working at the moment, not very important
+        # meant to keep colored terminal output
+        # TODO: Research correct placement/syntax
+        env:
+          FORCE_COLOR: "2"
