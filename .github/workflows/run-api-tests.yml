@@ -53,3 +53,7 @@ jobs:
         # TODO: Research correct placement/syntax
         env:
           FORCE_COLOR: "2"
+        # do not allow high or critical security issues
+        # with our dependencies, but omit dev dependencies
+        # from the check
+      - run: npm audit --omit=dev --audit-level=high
